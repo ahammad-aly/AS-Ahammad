@@ -37,28 +37,29 @@ function ParagraphHome() {
         </h3>
         <hr className="dark:text-fuchsia-400 m-3" />
         <p className="contant font font-bold text-xl dark:text-[#396868]">
-          As a highly skilled and dedicated developer, I specialize in
-          delivering top-quality, efficient, and scalable solutions tailored to
-          meet your unique project needs. With years of experience in{" "}
+          As a highly skilled Web developer, I specialize in delivering
+          efficient, user-friendly, and scalable solutions tailored to meet your
+          unique project need. I developed websites with years of experience in{" "}
           <span className="text-xl dark:text-blue-400 text-[#9d8ff3]">
-            React
+            HTML
           </span>
           ,{" "}
           <span className="text-xl dark:text-yellow-400 text-[#bbe20a]">
-            JavaScript
+            CSS
           </span>
           ,{" "}
           <span className="span text-xl dark:text-[#03fcf0] text-[#2cddd7]">
-            TailwindCSS
+            JavaScript
+          </span>{" "}
+          <span className="span text-xl dark:text-[#03fcf0] text-[#2cddd7]">
+            ReactJs
           </span>{" "}
           <span className="contant span text-xl">e.g.</span>{" "}
           <span className="max-lg:hidden ">
-            I take pride in writing clean, maintainable code while ensuring fast
-            performance and seamless user experiences. My strong problem-solving
-            abilities and commitment to deadlines guarantee that your project
-            will be completed with precision and professionalism. Let's
-            collaborate to turn your ideas into reality—your success is my
-            priority!
+            I take pride in writing clean and maintainable code while ensuring
+            fast performance. My strong problem-solving abilities to help create
+            a user-friendly web app. Let's collaborate to turn your ideas into
+            real life. Your success is my priority.
           </span>
         </p>
       </div>

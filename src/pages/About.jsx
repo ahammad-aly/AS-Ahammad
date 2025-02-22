@@ -29,7 +29,7 @@ const About = () => {
   });
 
   return (
-    <section className="min-h-screen p-8 bg-[#9c8bf8] dark:bg-gray-800">
+    <section className="min-h-screen p-8 bg-[#9c8bf8] bg-linear-to-r/srgb from-indigo-500 to-teal-400 dark:bg-radial-[at_25%_25%] dark:from-gray-500 dark:to-zinc-900">
       <div className="container flex justify-center mx-auto mt-17 p-6 text-center max-md:flex-col max-md:w-auto">
         <div className="flex flex-col w-1/2 justify-center text-center max-md:w-full">
           <img
@@ -48,23 +48,22 @@ const About = () => {
             Hey There
             <FaChildReaching className="text-green-400 text-2xl" />
           </h1>
-          <p className="title text-xl font-extrabold text-gray-600 dark:text-[#4bdbcd]">
-            I'm a passionate{" "}
+          <p className="title text-xl font-extrabold text-[#4f613e] dark:text-gray-300">
+            I am a passionate{" "}
             <span className="text-blue-500 font-semibold">
-              Front-End Engineer
+              Front-End Web Developer who
             </span>{" "}
-            specializing in building interactive, user-friendly web
-            applications. I have expertise in
+            expert in building interactive, and user-friendly web applications.
+            I've expertise in
             <span className="text-orange-500 font-semibold"> HTML</span>,
             <span className="text-blue-500 font-semibold"> CSS</span>,
-            <span className="text-yellow-500 font-semibold"> Javascript</span>,
-            <span className="text-blue-500 font-semibold"> React.js</span>,
+            <span className="text-yellow-500 font-semibold"> JavaScript</span>,
+            <span className="text-blue-500 font-semibold"> ReactJs</span>,
             <span className="text-teal-500 font-semibold"> Tailwind CSS</span>,
             and
-            <span className="text-green-500 font-semibold"> GSAP</span>,
-            creating smooth animations and seamless user experiences. Constantly
-            learning and pushing boundaries, I strive to turn ideas into reality
-            with clean, efficient code.
+            <span className="text-green-500 font-semibold"> GSAP</span>, to
+            creating a smooth animated web app. Constantly learning and pushing
+            boundaries, I bring designs to life with clean and efficient code.
           </p>
         </div>
       </div>

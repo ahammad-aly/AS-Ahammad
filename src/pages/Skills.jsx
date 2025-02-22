@@ -16,7 +16,7 @@ const Skills = () => {
   }, []);
 
   return (
-    <section className="py-12 min-h-screen bg-[#9c8bf8] dark:bg-gray-900">
+    <section className="py-12 min-h-screen bg-[#9c8bf8] bg-linear-to-r/srgb from-indigo-500 to-teal-400 dark:bg-radial-[at_25%_25%] dark:from-gray-500 dark:to-zinc-900">
       <div className="container mx-auto px-4">
         <h2 className="text-4xl font-bold text-center text-gray-800 dark:text-white my-8">
           Front-End Skills
