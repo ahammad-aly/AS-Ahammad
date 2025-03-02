@@ -1,33 +1,35 @@
 import { Link } from "react-router-dom";
+import useTheme from "../context/them";
 
 const Nav = () => {
+  const { FlipLink } = useTheme();
   return (
     <nav className="hidden md:flex space-x-4 p-4 dark:bg-gray-800">
       <div className="container mx-auto flex justify-between items-center">
-        <div className="space-x-4">
+        <div className="space-x-4 flex">
           <Link
             to="/"
-            className="text-gray-800 dark:text-white hover:text-blue-500 hover:text-bold"
+            className="text-gray-800 dark:text-white active:text-[#63b929] hover:text-bold"
           >
-            Home
+            <FlipLink>Home</FlipLink>
           </Link>{" "}
           <Link
             to="/skills"
-            className="text-gray-800 dark:text-white hover:text-blue-500"
+            className="text-gray-800 dark:text-white active:text-[#63b929]"
           >
-            Skills
+            <FlipLink>Skills</FlipLink>
           </Link>
           <Link
             to="/about"
-            className="text-gray-800 dark:text-white hover:text-blue-500"
+            className="text-gray-800 dark:text-white active:text-[#63b929]"
           >
-            About
+            <FlipLink>About</FlipLink>
           </Link>
           <Link
             to="/contact"
-            className="text-gray-800 dark:text-white hover:text-blue-500"
+            className="text-gray-800 dark:text-white active:text-[#63b929]"
           >
-            Contact
+            <FlipLink>Contact</FlipLink>
           </Link>
         </div>
       </div>

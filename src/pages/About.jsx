@@ -26,6 +26,11 @@ const About = () => {
       stagger: 0.3,
       duration: 0.5,
     });
+    gsap.from(".span", {
+      rotateX: 360,
+      delay: 2,
+      duration: 1,
+    });
   });
 
   return (
@@ -45,7 +50,7 @@ const About = () => {
         </div>
         <div className="flex flex-col w-1/2 justify-center text-center max-md:w-full">
           <h1 className="title flex my-9 dark:text-green-300 text-5xl">
-            Hey There
+            Hey <span className="span">There</span>
             <FaChildReaching className="text-green-400 text-2xl" />
           </h1>
           <p className="title text-xl font-extrabold text-[#4f613e] dark:text-gray-300">
@@ -59,9 +64,9 @@ const About = () => {
             <span className="text-blue-500 font-semibold"> CSS</span>,
             <span className="text-yellow-500 font-semibold"> JavaScript</span>,
             <span className="text-blue-500 font-semibold"> ReactJs</span>,
-            <span className="text-teal-500 font-semibold"> Tailwind CSS</span>,
+            <span className="text-[#24803b] font-semibold"> Tailwind CSS</span>,
             and
-            <span className="text-green-500 font-semibold"> GSAP</span>, to
+            <span className="text-[#b3219f] font-semibold"> GSAP</span>, to
             creating a smooth animated web app. Constantly learning and pushing
             boundaries, I bring designs to life with clean and efficient code.
           </p>

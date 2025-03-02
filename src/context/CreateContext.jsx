@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { ThemeProvider } from "./them.js";
+import { motion } from "framer-motion";
 
 function CreateContext({ children }) {
   const [themeMode, setThemeMode] = useState("light");
@@ -12,14 +13,77 @@ function CreateContext({ children }) {
     setThemeMode("dark");
   };
 
-  // actual change in theme
+  // motion functionality
+  const DURATION = 0.5;
+  const STAGGER = 0.025;
+
+  const FlipLink = ({ children, className }) => {
+    return (
+      <motion.div
+        initial="initial"
+        whileHover="hovered"
+        className={`relative overflow-hidden whitespace-nowrap font-black gap-y-1 ${className}`}
+        style={{
+          lineHeight: 0.75,
+        }}
+      >
+        <div>
+          {children.split("").map((l, i) => (
+            <motion.span
+              variants={{
+                initial: {
+                  y: 0,
+                },
+                hovered: {
+                  y: "-100%",
+                  opacity: 0,
+                },
+              }}
+              transition={{
+                duration: DURATION,
+                ease: "easeInOut",
+                delay: STAGGER * i,
+              }}
+              className="inline-block"
+              key={i}
+            >
+              {l}
+            </motion.span>
+          ))}
+        </div>
+        <div className="absolute inset-0">
+          {children.split("").map((l, i) => (
+            <motion.span
+              variants={{
+                initial: {
+                  y: "100%",
+                },
+                hovered: {
+                  y: 0,
+                },
+              }}
+              transition={{
+                duration: DURATION,
+                ease: "easeInOut",
+                delay: STAGGER * i,
+              }}
+              className="inline-block"
+              key={i}
+            >
+              {l}
+            </motion.span>
+          ))}
+        </div>
+      </motion.div>
+    );
+  };
 
   useEffect(() => {
     document.querySelector("html").classList.remove("light", "dark");
     document.querySelector("html").classList.add(themeMode);
   }, [themeMode]);
   return (
-    <ThemeProvider value={{ lightTheme, darkTheme, themeMode }}>
+    <ThemeProvider value={{ lightTheme, darkTheme, themeMode, FlipLink }}>
       {children}
     </ThemeProvider>
   );

@@ -6,22 +6,50 @@ import { AiOutlineYoutube } from "react-icons/ai";
 import { DiGithubBadge } from "react-icons/di";
 import useTheme from "../context/them";
 import { Typed } from "react-typed";
+import ScrollTrigger from "gsap/ScrollTrigger";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+gsap.registerPlugin(ScrollTrigger);
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [darkMode, setDarkMode] = useState(false);
   const { themeMode, darkTheme, lightTheme } = useTheme();
+  const textRef = React.useRef(null);
   useEffect(() => {
     const typed = new Typed(".title", {
       strings: ["<i>SA Ahammad</i>"],
       typeSpeed: 140,
       cursorChar: "",
     });
-
     return () => {
       typed.destroy();
     };
   }, []);
+
+  useGSAP(() => {
+    gsap.to(".title", {
+      opacity: 0,
+      scrollTrigger: {
+        trigger: ".title",
+        scroller: "body",
+        start: "top 0",
+        end: "top -5%",
+        scrub: 2,
+      },
+    });
+    gsap.to("h2", {
+      transform: " translateY(-100%)",
+      duration: 0.5,
+      scrollTrigger: {
+        trigger: "h2",
+        scroller: "body",
+        start: "top 0",
+        end: "top -5%",
+        scrub: 2,
+      },
+    });
+  });
   function activeTheme() {
     setDarkMode(!darkMode);
     if (themeMode === "light") {
@@ -37,14 +65,14 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="z-100 fixed backdrop-blur-sm bg-transparent w-full transition-opacity p-1 max-md:w-screen dark:bg-gray-800 shadow-md">
+    <nav className="z-100 fixed backdrop-blur-sm bg-transparent w-full transition-opacity p-4 max-md:w-screen dark:bg-gray-800 shadow-md max-md:p-2">
       <div className="container mx-auto flex justify-between items-center">
-        {/* Logo */}
-        <Link
-          to="/"
-          className="title flex items-center text-xl font-bold text-gray-800 dark:text-white"
-        ></Link>
-
+        <div className="main h-[30px] overflow-hidden font-bold ml-6 max-md:h-6">
+          <h2 className="title text-2xl text-[#c98aee] font-bold max-md:text-xl"></h2>
+          <h2 className="text-[#2fce29] py-1 leading-none max-md:text-xl">
+            Check out <br /> my profile
+          </h2>
+        </div>
         {/* Navigation Links (Hidden on screens < 670px) */}
         <Nav />
 
