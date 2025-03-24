@@ -73,7 +73,7 @@ const Home = () => {
           />
           <div ref={heroRef} className="text-center">
             <h1 className="text-7xl max-md:text-2xl cursor-pointer ">
-              <FlipLink>WELLCOME</FlipLink>
+              <FlipLink className="h-10">WELLCOME</FlipLink>
             </h1>
             <h3 className="p cursor-pointer mt-4 text-5xl text-gray-600 dark:text-gray-300 max-md:text-xl">
               {"I build modern, "}

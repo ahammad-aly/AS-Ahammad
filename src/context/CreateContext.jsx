@@ -22,7 +22,7 @@ function CreateContext({ children }) {
       <motion.div
         initial="initial"
         whileHover="hovered"
-        className={`relative overflow-hidden whitespace-nowrap font-black gap-y-1 ${className}`}
+        className={`relative overflow-hidden whitespace-nowrap font-black flex items-center ${className}`}
         style={{
           lineHeight: 0.75,
         }}
@@ -32,7 +32,8 @@ function CreateContext({ children }) {
             <motion.span
               variants={{
                 initial: {
-                  y: 0,
+                  y: -3,
+                  opacity: 1,
                 },
                 hovered: {
                   y: "-100%",
@@ -57,9 +58,11 @@ function CreateContext({ children }) {
               variants={{
                 initial: {
                   y: "100%",
+                  opacity: 0,
                 },
                 hovered: {
                   y: 0,
+                  opacity: 1,
                 },
               }}
               transition={{

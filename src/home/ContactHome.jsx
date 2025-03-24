@@ -51,27 +51,27 @@ const Contact = () => {
           Do_You_Want_To_Create_A_Project_?
         </h1>
       </div>
-      <div className="svg flex flex-col justify-center items-center backdrop-blur-sm bg-white/30">
+      <div className="svg flex flex-col justify-center items-center backdrop-blur-sm bg-white/30 mix-blend-color-burn dark:bg-amber-50">
         <form
           ref={formRef}
           className="flex flex-col justify-center items-center h-9/10 p-4 max-md:h-auto w-3xl mt-8 space-y-4 max-md:w-screen"
         >
-          <h2 className="con text-6xl font-bold text-gray-800 dark:text-[#95d0f7]">
+          <h2 className="con text-6xl font-bold text-gray-800 dark:text-[#d5eaf8]">
             Contact Me
           </h2>
           <input
             type="text"
             placeholder="Name"
-            className="con w-full p-2 border border-gray-300 rounded dark:bg-gray-700 dark:border-gray-600"
+            className="con w-full p-2 border-2 border-x-transparent border-t-transparent rounded"
           />
           <input
             type="email"
             placeholder="Email"
-            className="con w-full p-2 border border-gray-300 rounded dark:bg-gray-700 dark:border-gray-600"
+            className="con w-full p-2 border-2 border-x-transparent border-t-transparent rounded"
           />
           <textarea
             placeholder="Message"
-            className="con w-full p-2 border border-gray-300 rounded dark:bg-gray-700 dark:border-gray-600"
+            className="con w-full p-2 border-2 border-x-transparent border-t-transparent rounded"
           />
           <button
             type="submit"

@@ -65,11 +65,11 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="z-100 fixed backdrop-blur-sm bg-transparent w-full transition-opacity p-4 max-md:w-screen dark:bg-gray-800 shadow-md max-md:p-2">
+    <nav className="z-100 fixed backdrop-blur-sm bg-transparent w-full transition-opacity p-2 max-md:w-screen dark:bg-gray-800 shadow-md max-md:p-2">
       <div className="container mx-auto flex justify-between items-center">
-        <div className="main h-[30px] overflow-hidden font-bold ml-6 max-md:h-6">
+        <div className="main h-[30px] overflow-hidden font-bold ml-6 max-md:h-6 max-md:text-5">
           <h2 className="title text-2xl text-[#c98aee] font-bold max-md:text-xl"></h2>
-          <h2 className="text-[#2fce29] py-1 leading-none max-md:text-xl">
+          <h2 className="text-[#2fce29] leading-none max-md:text-base  max-md:h-11 h-9">
             Check out <br /> my profile
           </h2>
         </div>
