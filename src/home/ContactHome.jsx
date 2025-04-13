@@ -62,16 +62,16 @@ const Contact = () => {
           <input
             type="text"
             placeholder="Name"
-            className="con w-full p-2 border-2 border-x-transparent border-t-transparent rounded"
+            className="con w-full p-2 border border-x-transparent border-t-transparent rounded"
           />
           <input
             type="email"
             placeholder="Email"
-            className="con w-full p-2 border-2 border-x-transparent border-t-transparent rounded"
+            className="con w-full p-2 border border-x-transparent border-t-transparent rounded"
           />
           <textarea
             placeholder="Message"
-            className="con w-full p-2 border-2 border-x-transparent border-t-transparent rounded"
+            className="con w-full p-2 border border-x-transparent border-t-transparent rounded"
           />
           <button
             type="submit"

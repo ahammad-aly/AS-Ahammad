@@ -1,5 +1,5 @@
 import { DiCss3, DiJsBadge, DiGit } from "react-icons/di";
-import { FaReact } from "react-icons/fa";
+import { FaReact, FaJsSquare } from "react-icons/fa";
 import { FaHtml5 } from "react-icons/fa6";
 import { SiTailwindcss, SiGreensock, SiRedux } from "react-icons/si";
 
@@ -25,7 +25,7 @@ const skills = [
       "Mastering Responsive and Effective HTML, CSS with JavaScript Integration.",
     level: 90,
     icon: "fab fa-js-square text-yellow-500",
-    img: <DiJsBadge className="text-yellow-500 text-7xl" />,
+    img: <FaJsSquare className="text-7xl" />,
   },
   {
     name: "React",

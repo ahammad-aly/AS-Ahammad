@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { ThemeProvider } from "./them.js";
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 
 function CreateContext({ children }) {
   const [themeMode, setThemeMode] = useState("light");
