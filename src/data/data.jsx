@@ -1,7 +1,14 @@
 import { DiCss3, DiJsBadge, DiGit } from "react-icons/di";
 import { FaReact, FaJsSquare } from "react-icons/fa";
 import { FaHtml5 } from "react-icons/fa6";
-import { SiTailwindcss, SiGreensock, SiRedux } from "react-icons/si";
+import {
+  SiTailwindcss,
+  SiGreensock,
+  SiRedux,
+  SiMongodb,
+  SiExpress,
+} from "react-icons/si";
+import { IoLogoNodejs } from "react-icons/io5";
 
 const skills = [
   {
@@ -25,7 +32,7 @@ const skills = [
       "Mastering Responsive and Effective HTML, CSS with JavaScript Integration.",
     level: 90,
     icon: "fab fa-js-square text-yellow-500",
-    img: <FaJsSquare className="text-7xl" />,
+    img: <FaJsSquare className="text-7xl text-yellow-500" />,
   },
   {
     name: "React",
@@ -64,6 +71,29 @@ const skills = [
     level: 80,
     icon: "fas fa-code text-green-500",
     img: <SiRedux className="text-[#9342f5] text-7xl" />,
+  },
+  {
+    name: "Node.js",
+    title: "Experienced in building scalable backend services with Node.js.",
+    level: 70,
+    icon: "fas fa-code text-green-500",
+    img: <IoLogoNodejs className="text-[#6342f5] text-7xl" />,
+  },
+  {
+    name: "Express",
+    title:
+      "building fast and secure RESTful APIs with Express, handling routing, middleware, and backend logic.",
+    level: 80,
+    icon: "fas fa-code text-green-500",
+    img: <SiExpress className="text-[#a687cc] text-7xl" />,
+  },
+  {
+    name: "MongoDB",
+    title:
+      "Proficient in MongoDB for designing scalable databases and optimizing data models.",
+    level: 60,
+    icon: "fas fa-code text-green-500",
+    img: <SiMongodb className="text-[#42f578] text-7xl" />,
   },
 ];
 

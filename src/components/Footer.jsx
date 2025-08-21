@@ -20,12 +20,6 @@ const Footer = () => {
             >
               LinkedIn
             </Link>
-            <Link
-              to="https://www.youtube.com/@ERROR-CODE333"
-              className="text-gray-600 dark:text-gray-300 hover:text-blue-500 font-bold text-xl"
-            >
-              Youtube
-            </Link>
           </div>
 
           {/* Copyright Notice */}

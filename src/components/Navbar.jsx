@@ -77,20 +77,18 @@ const Navbar = () => {
         <Nav />
 
         <div className="max-md:hidden w-90 flex justify-evenly text-white">
-          <div className="w-50 flex justify-evenly text-white">
+          <div className="w-50 flex justify-evenly items-center text-white">
             <Link to="https://github.com/ahammad-aly">
               <DiGithubBadge className="text-3xl font-bold text-[#063011] dark:text-white" />
             </Link>
-            <Link to="https://www.youtube.com/@ERROR-CODE333">
-              <AiOutlineYoutube className="text-3xl font-bold text-[#063011] dark:text-white" />
-            </Link>
+
+            <button
+              onClick={activeTheme}
+              className="mr-6 text-gray-800 dark:text-white"
+            >
+              {darkMode ? "🌞" : "🌙"}
+            </button>
           </div>
-          <button
-            onClick={activeTheme}
-            className="mr-6 text-gray-800 dark:text-white"
-          >
-            {darkMode ? "🌞" : "🌙"}
-          </button>
         </div>
 
         <div className="md:hidden flex w-30 text-red-800">
