@@ -1,11 +1,34 @@
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
+import axios from "axios";
 import ScrollTrigger from "gsap-trial/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 const Contact = () => {
   const formRef = useRef(null);
+  const [data, setData] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+
+  function handleChange(e) {
+    const { name, value } = e.target;
+
+    setData((prev) => ({ ...prev, [name]: value }));
+  }
+
+  async function handleSubmit(e) {
+    e.preventDefault();
+    const d = await axios.post("/api/email/", data);
+
+    setData({
+      name: "",
+      email: "",
+      message: "",
+    });
+  }
 
   useGSAP(() => {
     gsap.from(formRef.current, {
@@ -54,22 +77,32 @@ const Contact = () => {
       <div className="svg flex flex-col justify-center items-center backdrop-blur-sm bg-white/30 mix-blend-color-burn dark:bg-amber-50">
         <form
           ref={formRef}
+          onSubmit={handleSubmit}
           className="flex flex-col justify-center items-center h-9/10 p-4 max-md:h-auto w-3xl mt-8 space-y-4 max-md:w-screen"
         >
           <h2 className="con text-6xl font-bold text-gray-800 dark:text-[#d5eaf8]">
             Contact Me
           </h2>
           <input
+            name="name"
+            onChange={handleChange}
+            value={data.name}
             type="text"
             placeholder="Name"
             className="con w-full p-2 border border-x-transparent border-t-transparent rounded"
           />
           <input
             type="email"
+            name="email"
+            onChange={handleChange}
+            value={data.email}
             placeholder="Email"
             className="con w-full p-2 border border-x-transparent border-t-transparent rounded"
           />
           <textarea
+            name="message"
+            onChange={handleChange}
+            value={data.message}
             placeholder="Message"
             className="con w-full p-2 border border-x-transparent border-t-transparent rounded"
           />

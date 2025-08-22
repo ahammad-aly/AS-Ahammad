@@ -1,9 +1,10 @@
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
 import contact from "../assets/contact.jpg";
 import ContactText from "../data/ContactText";
 import ScrollTrigger from "gsap-trial/ScrollTrigger";
+import axios from "axios";
 gsap.registerPlugin(ScrollTrigger);
 
 const Contact = () => {
@@ -11,6 +12,29 @@ const Contact = () => {
     const tl = gsap.timeline();
     tl.from(".rForm", { x: 400, duration: 0.8 });
   });
+
+  const [data, setData] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+
+  function handleChange(e) {
+    const { name, value } = e.target;
+
+    setData((prev) => ({ ...prev, [name]: value }));
+  }
+
+  async function handleSubmit(e) {
+    e.preventDefault();
+    const d = await axios.post("/api/email/contact", data);
+
+    setData({
+      name: "",
+      email: "",
+      message: "",
+    });
+  }
 
   return (
     <section
@@ -20,22 +44,34 @@ const Contact = () => {
       <div className="flex items-center overflow-hidden backdrop-blur-sm bg-white/30 rounded-2xl max-w-5xl mx-auto max-md:flex-col dark:bg-gray-500">
         <ContactText />
 
-        <form className="rForm h-9/10 w-1/2 p-4 max-md:h-auto max-md:w-auto mt-8 space-y-4">
+        <form
+          className="rForm h-9/10 w-1/2 p-4 max-md:h-auto max-md:w-auto mt-8 space-y-4"
+          onSubmit={handleSubmit}
+        >
           <h2 className="text-6xl font-bold text-gray-800 dark:text-[#94ff08]">
             Contact
           </h2>
           <input
             type="text"
+            value={data.name}
+            onChange={handleChange}
+            name="name"
             placeholder="Name"
             className="w-full p-2 border border-gray-300 rounded dark:bg-gray-700 dark:border-gray-600"
           />
           <input
             type="email"
+            value={data.email}
+            onChange={handleChange}
+            name="email"
             placeholder="Email"
             className="w-full p-2 border border-gray-300 rounded dark:bg-gray-700 dark:border-gray-600"
           />
           <textarea
             placeholder="Message"
+            value={data.message}
+            onChange={handleChange}
+            name="message"
             className="w-full p-2 border border-gray-300 rounded dark:bg-gray-700 dark:border-gray-600"
           />
           <button
