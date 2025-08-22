@@ -21,7 +21,10 @@ const Contact = () => {
 
   async function handleSubmit(e) {
     e.preventDefault();
-    const d = await axios.post("/api/email/", data);
+    const d = await axios.post(
+      `${import.meta.env.VITE_API_URL}/api/email/`,
+      data
+    );
 
     setData({
       name: "",
