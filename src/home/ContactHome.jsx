@@ -21,16 +21,38 @@ const Contact = () => {
 
   async function handleSubmit(e) {
     e.preventDefault();
-    const d = await axios.post(
-      `${import.meta.env.VITE_API_URL}/api/email/`,
-      data
-    );
-
-    setData({
-      name: "",
-      email: "",
-      message: "",
-    });
+    try {
+      const d = await axios.post(
+        `${import.meta.env.VITE_API_URL}/api/email/contact`,
+        data
+      );
+      if (d.status === 200) {
+        toast.success(d.data.msg, {
+          position: "top-right",
+          autoClose: 5000,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          theme: "colored",
+        });
+        setData({
+          name: "",
+          email: "",
+          message: "",
+        });
+      }
+    } catch (error) {
+      if (error.response.data.stat === 400) {
+        toast.error(error.response.data.msgerr, {
+          position: "top-right",
+          autoClose: 5000,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          theme: "colored",
+        });
+      }
+    }
   }
 
   useGSAP(() => {
