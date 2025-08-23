@@ -2,6 +2,7 @@ import { useRef, useState } from "react";
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
 import axios from "axios";
+import { toast } from "react-toastify";
 import ScrollTrigger from "gsap-trial/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
@@ -23,7 +24,7 @@ const Contact = () => {
     e.preventDefault();
     try {
       const d = await axios.post(
-        `${import.meta.env.VITE_API_URL}/api/email/contact`,
+        `${import.meta.env.VITE_API_URL}/api/email`,
         data
       );
       if (d.status === 200) {
