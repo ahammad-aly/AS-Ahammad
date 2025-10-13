@@ -1,9 +1,46 @@
 @import "tailwindcss";
 @custom-variant dark (&:where(.dark, .dark *));
+
+* {
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+:root {
+  --gradient-type: linear-gradient(
+    to right in srgb,
+    var(--from-color),
+    var(--to-color)
+  );
+  --from-color: #6366f1; /* indigo-500 */
+  --to-color: #2dd4bf; /* teal-400 */
+  --text-color: #1e293b;
+}
+
+.dark {
+  --gradient-type: radial-gradient(
+    at 25% 25%,
+    var(--from-color),
+    var(--to-color)
+  );
+  --from-color: #6b7280; /* gray-500 */
+  --to-color: #18181b; /* zinc-900 */
+  --text-color: #c0c0bf;
+  /* --text-color: #000000; */
+}
+
+.bg-gradient {
+  background: var(--gradient-type);
+}
+
+.text-color {
+  color: var(--text-color);
+}
+
 body {
   overflow-x: hidden;
 }
 
+/* components css */
 .curds {
   width: 85vw;
   height: auto;
@@ -15,10 +52,6 @@ body {
   color: var(--color-just-black);
   position: relative;
   border-radius: 10px;
-}
-
-.curdM:hover {
-  background: #64f58b;
 }
 
 button {

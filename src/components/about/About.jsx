@@ -1,13 +1,9 @@
-import { useRef, useEffect } from "react";
-import { gsap } from "gsap";
-import { useGSAP } from "@gsap/react";
+import { useEffect } from "react";
 import { FaChildReaching } from "react-icons/fa6";
-import my from "../assets/about.svg";
 import { Typed } from "react-typed";
-import Skilled from "../data/Skilled";
+import Skilled from "./Skilled";
 
 const About = () => {
-  const aboutRef = useRef(null);
   useEffect(() => {
     const typed = new Typed(".titl", {
       strings: ["<i>I am Ahammad</i>"],
@@ -19,26 +15,13 @@ const About = () => {
       typed.destroy();
     };
   }, []);
-  useGSAP(() => {
-    gsap.from(".title", {
-      y: 100,
-      opacity: 0,
-      stagger: 0.3,
-      duration: 0.5,
-    });
-    gsap.from(".span", {
-      rotateX: 360,
-      delay: 2,
-      duration: 1,
-    });
-  });
 
   return (
-    <section className="min-h-screen p-8 bg-[#9c8bf8] bg-linear-to-r/srgb from-indigo-500 to-teal-400 dark:bg-radial-[at_25%_25%] dark:from-gray-500 dark:to-zinc-900">
-      <div className="container flex justify-center mx-auto mt-17 p-6 text-center max-md:flex-col max-md:w-auto">
+    <>
+      <div className="flex justify-center mx-auto mt-17 p-6 text-center max-md:flex-col max-md:w-auto">
         <div className="flex flex-col w-1/2 justify-center text-center max-md:w-full">
           <img
-            src={my}
+            src="/svgs/about.svg"
             className="title ml-7 rounded-xl mx-auto  max-md:mx-auto"
           />
           <div className="flex my-8">
@@ -53,7 +36,7 @@ const About = () => {
             Hey <span className="span">There</span>
             <FaChildReaching className="text-green-400 text-2xl" />
           </h1>
-          <p className="title text-xl font-extrabold text-[#4f613e] dark:text-gray-300">
+          <p className="title text-xl font-extrabold text-color">
             I am a passionate{" "}
             <span className="text-blue-500 font-semibold">
               Front-End Web Developer who
@@ -74,7 +57,7 @@ const About = () => {
       </div>
       <hr className="dark:text-teal-400 mt-19" />
       <Skilled />
-    </section>
+    </>
   );
 };
 
